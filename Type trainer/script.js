@@ -46,7 +46,7 @@ function button_disable() {
 function set_time() {
   time = setTime.value;
   if(time == false){
-    time = 3;
+    time = 120;
   }
 }
 
@@ -76,9 +76,9 @@ function makeJapaneseSentence() {
 
 //正解数の表示
 function textContents() {
-  corrects.textContent = `正解文字数:${correct}`;
-  miss.textContent = `ミス:${mistake}`;
-  scores.textContent = `正解文:${score}`;
+  corrects.textContent = `正解文字数:${correct}個`;
+  miss.textContent = `ミス:${mistake}個`;
+  scores.textContent = `正解文:${score}個`;
 }
 
 //正解時の処理
@@ -86,7 +86,7 @@ function correctProcess() {
   correctSound.play();
   correctSound.currentTime = 0;
   correct += 1;
-  corrects.textContent = `正解文字数:${correct}`
+  corrects.textContent = `正解文字数:${correct}個`;
 }
 
 //不正解時の処理
@@ -94,7 +94,7 @@ function mistakeProcess() {
   missSound.play();
   missSound.currentTime = 0;
   mistake += 1;
-  miss.textContent = `ミス:${mistake}`;
+  miss.textContent = `ミス:${mistake}個`;
 }
 
 //一文正解時の処理
@@ -102,7 +102,7 @@ function correctSentenceProcess() {
   sentenceCorrect.play();
   sentenceCorrect.currentTime = 0;
   score += 1;
-  scores.textContent = `正解文:${score}`;
+  scores.textContent = `正解文:${score}個`;
 }
 
 //終了時の処理
